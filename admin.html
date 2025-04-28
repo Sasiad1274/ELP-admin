@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<!-- Example for manageproduct.html -->
+<header>
+  <h1>Admin </h1>
+  <nav class="header-buttons">
+    <a href="admin.html" class="header-btn"> Admin</a>
+    <a href="Procurement.html" class="header-btn">manage procurment</a>
+    <a href="management.html" class="header-btn">Management</a> 
+    <a href="products.html" class="header-btn">Products</a>
+  </nav>
+</header>
+
+    <section>
+        <h2>Add New Product</h2>
+        <form id="add-product-form">
+            <div class="form-group">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" required>
+            </div>
+            <div class="form-group">
+                <label for="product-image">Image File Name (e.g., product.jpg):</label>
+                <input type="text" id="product-image" required>
+            </div>
+            <div class="form-group">
+                <label for="product-price">Price (ETB):</label>
+                <input type="number" id="product-price" required>
+            </div>
+            <div class="form-group">
+                <label for="product-category">Category:</label>
+                <select id="product-category" required>
+                    <option value="Men">Men's Perfumes</option>
+                    <option value="Women">Women's Perfumes</option>
+                    <option value="Unisex">Unisex Perfumes</option>
+                    <option value="Luxury">Luxury Perfumes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="product-quantity">Quantity Available:</label>
+                <input type="number" id="product-quantity" required>
+            </div>
+            <button type="submit">Add Product</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Product Management</h2>
+        <table id="product-management-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price (ETB)</th>
+                    <th>Quantity</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Products will be dynamically added here -->
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Management Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+  <nav class="header-buttons">
+    <a href="admin.html" class="header-btn"> Admin</a>
+    <a href="Procurement.html" class="header-btn">manage procurment</a>
+    <a href="management.html" class="header-btn">Management</a> 
+  </nav>
+
+
+  <style>
+    /* HR Management Dashboard Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #101036;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #101036;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #101036;
+      color: white;
+    }
+
+    button {
+      background-color: #101036;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .user-list {
+      margin-top: 20px;
+    }
+
+    .user-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background-color: #fff;
+    }
+
+    .user-row span {
+      font-size: 1rem;
+    }
+
+    .user-row button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .user-row button:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HR Management</h1>
+  </header>
+
+  <section>
+    <h2>Employment Data</h2>
+    <form id="add-user-form">
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="Enter full name" required>
+      </div>
+      <div class="form-group">
+        <label for="position">Position:</label>
+        <input type="text" id="position" placeholder="Enter position" required>
+      </div>
+      <div class="form-group">
+        <label for="id">ID Number:</label>
+        <input type="text" id="id" placeholder="Enter ID number" required>
+      </div>
+      <button type="submit">Add Member</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>ID</th>
+          <th>Position</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="employment-data">
+        <!-- Pre-loaded employment data will be dynamically added here -->
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+  // Pre-loaded employment data
+  const employmentData = [
+    { name: "Betaniya Mekbib", id: "UGR/9341/15", position: "HR Manager" },
+    { name: "Mihret Asfaw", id: "UGR/0803/15", position: "Procurement Manager" },
+    { name: "Nehmia Tewachew", id: "UGR/5357/15", position: "Software Engineer" },
+    { name: "Temesgen Kidane", id: "UGR/0686/15", position: "Data Analyst" },
+    { name: "Surafel Admassu Frehiwot", id: "UGR/4292/15", position: "Project Manager" },
+    { name: "Sofonias Getahun", id: "UGR/6876/15", position: "System Administrator" }
+  ];
+
+  // Render pre-loaded employment data
+  function renderEmploymentData() {
+    const employmentTable = document.getElementById("employment-data");
+    employmentTable.innerHTML = ""; // Clear existing rows
+    employmentData.forEach((employee, index) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${employee.name}</td>
+        <td>${employee.id}</td>
+        <td>${employee.position}</td>
+        <td><button onclick="removeMember(${index})" class="remove-btn">Remove</button></td>
+      `;
+      employmentTable.appendChild(row);
+    });
+  }
+
+  // Add new member functionality
+  function addMember(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const position = document.getElementById("position").value.trim();
+    const id = document.getElementById("id").value.trim();
+
+    if (!name || !position || !id) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    // Add new member to the employment data
+    employmentData.push({ name, id, position });
+
+    // Re-render the table
+    renderEmploymentData();
+
+    // Clear the form
+    document.getElementById("add-user-form").reset();
+  }
+
+  // Remove member functionality
+  function removeMember(index) {
+    // Remove the member from the employment data
+    employmentData.splice(index, 1);
+
+    // Re-render the table
+    renderEmploymentData();
+  }
+
+  // Initialize the page
+  document.addEventListener("DOMContentLoaded", function () {
+    renderEmploymentData();
+
+    const addUserForm = document.getElementById("add-user-form");
+    addUserForm.addEventListener("submit", addMember);
+  });
+</script>
+</body>
+</html>

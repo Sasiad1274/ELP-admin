@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment — Elegance Perfume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <span class="logo">Elegance Perfume</span>
+    <div class="menu-toggle" aria-label="Open menu">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart <span class="cart-count"></span></a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </nav>
+</header>
+
+<section class="payment-section">
+  <div class="payment-title">Complete Your Payment</div>
+  <div class="payment-methods">
+    <div class="payment-method selected">Telebirr</div>
+    <div class="payment-method">CBE Birr</div>
+    <div class="payment-method">M-PESA Ethiopia</div>
+  </div>
+  <div class="payment-forms">
+    <!-- Telebirr -->
+    <form class="payment-form active" data-method="Telebirr">
+      <label for="telebirr-phone">Phone Number (Telebirr)</label>
+      <input type="text" id="telebirr-phone" required pattern="^09\d{8}$" placeholder="e.g., 0912345678">
+      <label for="telebirr-name">Account Name</label>
+      <input type="text" id="telebirr-name" required placeholder="Full Name">
+      <button type="submit" class="pay-btn">Pay with Telebirr</button>
+    </form>
+    <!-- CBE Birr -->
+    <form class="payment-form" data-method="CBE Birr">
+      <label for="cbe-phone">Phone Number (CBE Birr)</label>
+      <input type="text" id="cbe-phone" required pattern="^09\d{8}$" placeholder="e.g., 0912345678">
+      <label for="cbe-id">CBE Birr ID</label>
+      <input type="text" id="cbe-id" required placeholder="CBE Birr ID">
+      <button type="submit" class="pay-btn">Pay with CBE Birr</button>
+    </form>
+    <!-- MPESA -->
+    <form class="payment-form" data-method="M-PESA Ethiopia">
+      <label for="mpesa-phone">Phone Number (M-PESA)</label>
+      <input type="text" id="mpesa-phone" required pattern="^09\d{8}$" placeholder="e.g., 0912345678">
+      <label for="mpesa-id">M-PESA ID</label>
+      <input type="text" id="mpesa-id" required placeholder="M-PESA ID">
+      <button type="submit" class="pay-btn">Pay with M-PESA</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <div class="footer-title">Pages</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <div class="footer-title">Follow Us</div>
+      <div class="footer-socials">
+        <span class="footer-social" title="Facebook">🌐</span>
+        <span class="footer-social" title="Instagram">📸</span>
+        <span class="footer-social" title="Twitter">🐦</span>
+      </div>
+    </div>
+    <div class="footer-section">
+      <div class="footer-title">Contact</div>
+      <div class="footer-contact">
+        Phone: 0968687876<br>
+        Phone: 0978789090<br>
+        Email: support@eleganceperfume@gmail.com
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Elegance Perfume &copy; 2025. All rights reserved.
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

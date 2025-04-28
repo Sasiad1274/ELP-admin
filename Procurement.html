@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procurement Dashboard - Elegance Perfume</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the existing CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Procurement </h1>
+        <nav class="header-buttons">
+            <a href="admin.html" class="header-btn">Admin</a>
+            <a href="Procurement.html" class="header-btn">Manage Procurement</a>
+            <a href="management.html" class="header-btn">Management</a>
+        </nav>
+    </header>
+
+    <section id="search-filter">
+        <h2>Search and Filter</h2>
+        <form onsubmit="handleSearch(event)" class="search-filter">
+            <div class="form-group">
+                <label for="search-supplier">Search by Supplier Name:</label>
+                <input type="text" id="search-supplier" name="search-supplier" placeholder="Enter supplier name">
+            </div>
+            <div class="form-group">
+                <label for="search-product">Search by Product Name:</label>
+                <input type="text" id="search-product" name="search-product" placeholder="Enter product name">
+            </div>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <section id="dashboard">
+        <h2>Current Procurement Orders</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Supplier</th>
+                    <th>Product Ordered</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Order Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PRC1001</td>
+                    <td>Maison Francis Kurkdjian Supplier</td>
+                    <td>Baccarat Rouge 540</td>
+                    <td>50 units</td>
+                    <td>Pending</td>
+                    <td>2025-04-10</td>
+                </tr>
+                <tr>
+                    <td>PRC1002</td>
+                    <td>Creed Distributors</td>
+                    <td>Creed Aventus</td>
+                    <td>30 units</td>
+                    <td>Approved</td>
+                    <td>2025-04-12</td>
+                </tr>
+                <tr>
+                    <td>PRC1003</td>
+                    <td>Dior Wholesale</td>
+                    <td>Dior Sauvage Elixir</td>
+                    <td>100 units</td>
+                    <td>Delivered</td>
+                    <td>2025-04-15</td>
+                </tr>
+                <tr>
+                    <td>PRC1004</td>
+                    <td>Tom Ford Supply Co.</td>
+                    <td>Tom Ford Lost Cherry</td>
+                    <td>20 units</td>
+                    <td>Pending</td>
+                    <td>2025-04-17</td>
+                </tr>
+                <tr>
+                    <td>PRC1005</td>
+                    <td>Byredo Partners</td>
+                    <td>Byredo Mojave Ghost</td>
+                    <td>40 units</td>
+                    <td>Delivered</td>
+                    <td>2025-04-18</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="manage-suppliers">
+        <h2>Supplier Management</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Supplier Name</th>
+                    <th>Contact Person</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Products Supplied</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maison Francis Kurkdjian Supplier</td>
+                    <td>Jean Dupont</td>
+                    <td>+33 1 45 67 89 00</td>
+                    <td>info@mfksuppliers.com</td>
+                    <td>Baccarat Rouge 540</td>
+                </tr>
+                <tr>
+                    <td>Creed Distributors</td>
+                    <td>Emily Scott</td>
+                    <td>+44 20 7946 0958</td>
+                    <td>sales@creedperfume.com</td>
+                    <td>Creed Aventus, Silver Mountain Water</td>
+                </tr>
+                <tr>
+                    <td>Dior Wholesale</td>
+                    <td>Lucas Martin</td>
+                    <td>+33 1 48 99 56 23</td>
+                    <td>wholesale@dior.com</td>
+                    <td>Dior Sauvage Elixir, J'adore l'Or</td>
+                </tr>
+                <tr>
+                    <td>Tom Ford Supply Co.</td>
+                    <td>Clara Johnson</td>
+                    <td>+1 212 555 0134</td>
+                    <td>support@tomford.com</td>
+                    <td>Lost Cherry, Noir Extreme</td>
+                </tr>
+                <tr>
+                    <td>Byredo Partners</td>
+                    <td>Sofia Andersson</td>
+                    <td>+46 8 555 1234</td>
+                    <td>supply@byredo.com</td>
+                    <td>Mojave Ghost</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script> <!-- Link to the existing JavaScript file -->
+</body>
+</html>
